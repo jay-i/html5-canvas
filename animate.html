@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Canvas Animation</title>
+	<style>
+		canvas{
+			border:#000000 1px solid;
+		}
+	</style>
+	<script>
+		var c;
+		var ctx;
+		
+		function init(){
+			c = document.getElementById("myCanvas");
+			ctx = c.getContext("2d");
+			draw();
+		}
+		
+		function draw(){
+			var posX = 0;
+			var posY = 0;
+			setInterval(function(){
+				// Increment position by 1
+				posX += 1;
+				posY += 1;
+				
+				ctx.clearRect(0,0,c.width,c.height);
+				ctx.fillStyle = "red";
+				ctx.fillRect(posX,0,50,50);
+			},30);
+		}
+	
+	</script>
+</head>
+<body onload="init()">
+	<canvas id="myCanvas" width="600" height="400">
+		<p>Sorry, your browser doesn't use the canvas feature</p>
+	</canvas>
+</body>
+</html>
